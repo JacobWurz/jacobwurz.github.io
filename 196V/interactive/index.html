@@ -27,6 +27,8 @@
 					<p>A project done by Jacob Wurz and Karla Lozada</p>
 					<ul class="actions special">
 						<li><a href="#one" class="button scrolly">Let's Start</a></li>
+						<li><a href="#two" class="button scrolly">Skip to Visualization</a></li>
+						<li><a href="#three" class="button scrolly">Our Rationale</a></li>
 					</ul>
 
 
@@ -92,11 +94,11 @@
 								</font>
 							  </p>
 
-
+				<section id="two">
 							  <h2>Visualization</h2>
-
+							  <h4><b>Does the GDP of a nation affect the CO2 output of a country?</b></h4>
 							  <div id="my_dataviz"></div>
-
+				
 <!--START OF GRAPH CODE-->
 
 <script>
@@ -142,7 +144,7 @@ d3.csv("https://raw.githubusercontent.com/JacobWurz/jacobwurz.github.io/master/1
 
   // Add Y axis
   var y = d3.scaleLinear()
-    .domain([-150, 150])
+    .domain([-350, 150])
     .range([ height, 0 ]);
     //var yAxis = svg.append("g")
     //.attr("transform", "translate(0," + height + ")")
@@ -212,6 +214,7 @@ d3.csv("https://raw.githubusercontent.com/JacobWurz/jacobwurz.github.io/master/1
 })
 </script>
 <!--FINISH OF GRAPH CODE-->
+<section id="three">
 <h2>Implementation of the visualization</h2>
 
 <font size = "3">
