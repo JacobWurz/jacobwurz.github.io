@@ -122,7 +122,8 @@ d3.csv("https://raw.githubusercontent.com/JacobWurz/jacobwurz.github.io/master/1
 
         console.log(data.columns);
   // List of groups = header of the csv files
-  var keys = data.columns.slice(3)  //.columns.slice(1).slice(1) takes out the "year" column
+  var keys = data.columns.slice(8)  //.columns.slice(1).slice(1) takes out the "year" column
+  var usGDP = data.columns[1]
 		console.log(keys);
   // Add X axis
   var x = d3.scaleLinear()
@@ -144,11 +145,8 @@ d3.csv("https://raw.githubusercontent.com/JacobWurz/jacobwurz.github.io/master/1
 
   // Add Y axis
   var y = d3.scaleLinear()
-    .domain([-350, 150])
+    .domain([-170, 130])
     .range([ height, 0 ]);
-    //var yAxis = svg.append("g")
-    //.attr("transform", "translate(0," + height + ")")
-    //.call(d3.axisBottom(y).ticks(3))
 	
   // color palette
   var color = d3.scaleOrdinal()
@@ -160,7 +158,17 @@ d3.csv("https://raw.githubusercontent.com/JacobWurz/jacobwurz.github.io/master/1
     .offset(d3.stackOffsetSilhouette)
     .keys(keys)
 	.order(d3.stackOrderNone)
-    (data)
+    (data)	
+	//add the line
+	svg.append("path")
+      .datum(data)
+      .attr("fill", "none")
+      .attr("stroke", "steelblue")
+      .attr("stroke-width", 1.5)
+      .attr("d", d3.line()
+        .x(function(d) { return x(d.year) })
+        .y(function(d) { return y(d.year) })
+        )
 
   // create a tooltip
   var Tooltip = svg
@@ -188,8 +196,6 @@ d3.csv("https://raw.githubusercontent.com/JacobWurz/jacobwurz.github.io/master/1
    }
   var mouseclick = function(d){
 	console.log("test")
-	y = d3.scaleLinear().domain([-50,50])
-	yAxis.transition().duration(1000).call(d3.axisBottom(y).ticks(5))
   }
   // Area generator
   var area = d3.area()
