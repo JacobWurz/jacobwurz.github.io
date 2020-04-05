@@ -26,7 +26,7 @@
 					<h1>Interactive Design</h1>
 					<p>A project done by Jacob Wurz and Karla Lozada</p>
 					<ul class="actions special">
-						<li><a href="#one" class="button scrolly">Discover</a></li>
+						<li><a href="#one" class="button scrolly">Let's Start</a></li>
 					</ul>
 
 
@@ -60,13 +60,34 @@
 							compare both values to see if there is any relation between emissions from burning fossil fuels 
 							and the GDP of the country. 	
 							</h5>
+
+							<h5>
+								Ecuador is a third world country so the technology and resources are lower 
+								than a country like the United States. We wanted to compare both countries 
+								in order to see if a more developed country has lower CO2 emission levels. 
+								To accomplish this goal, we are using data from the United States and 
+								comparing it with Ecuador data. We have two main questions to answer with 
+								this visualization. Firstly, we want to know the relation between GDP and 
+								CO2 emission in Ecuador. Secondly, we want to see the relation between CO2 
+								emission of a third world country compared to the CO2 emission of a first 
+								world country such as the United States. 
+							</h5>
 							</font>
 
 							<p>
 								<font size = "3">
-								The data is available online at:
+								The data of Ecuador is available online at:
 								<strong>
 								  <a href="https://data.worldbank.org/country/ecuador">DATASET</a>
+								</strong>
+								</font>
+							  </p>
+							  
+							<p>
+								<font size = "3">
+								The data of the United States is available online at:
+								<strong>
+								  <a href="https://data.worldbank.org/country/united-states">DATASET</a>
 								</strong>
 								</font>
 							  </p>
@@ -194,35 +215,43 @@ d3.csv("https://raw.githubusercontent.com/JacobWurz/jacobwurz.github.io/master/1
 <h2>Implementation of the visualization</h2>
 
 <font size = "3">
-<h5>
+<h5><strong>
 	A rationale for your design decisions. How did you choose your particular visual encodings and interaction techniques? What alternatives did you consider and how did you arrive at your ultimate choices?
-</h5>
+</h5></strong>
 <h5>
+	At first, we weren’t sure of which dataset to use, so we had to
+do some research and find topics that are interesting for us. However, after
+finding the two datasets we knew we wanted to use a visualization that was
+interesting and new for us. We knew that we wanted to use D3 because we did
+several tutorials before and it was better to perfect our knowledge on it rather
+than choose a completely new language and libraries for us. Also, we thought
+about using VegaLite but there wasn’t enough documentation for us. We decided
+to use D3 because we knew how to add that to our HTML
+page and style it with CSS and Bootstrap. For the visualization, we decided to
+use a Steamgraph, which is a type of stacked area graph that is displaced
+around a central axis. Also, we liked that it gave the graph a nice flow and an
+organic shape. We were comparing a lot of values, so this graph made it better
+to understand the relationship between values.  
+</h5>
+<h5><strong>
 	An overview of your development process. Describe how the work was split among the team members. Include a commentary on the development process, including answers to the following questions: Roughly how much time did you spend developing your application (in people-hours)? What aspects took the most time?
 		
-	
+</strong>
+</h5>
+<h5>
+	We first did some research to find data and which graph could fit our data the
+	 best. We both are working on the visualization. ???
 </h5>
 
 
 </font>
-
-
-
-
-					</div>
+           </div>
 							
 						</div>
 						
 					</div>
 				</div>
 			</section>
-
-		
-		
-
-	
-	
-
 		<!-- Footer -->
 			<section id="footer">
 				<ul class="icons">
@@ -231,11 +260,11 @@ d3.csv("https://raw.githubusercontent.com/JacobWurz/jacobwurz.github.io/master/1
 					<li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
 				</ul>
 				<ul class="copyright">
-					<li>&copy; Untitled</li><li>Design: Karla Lozada</li>
+					<li></li><li>Design: Karla Lozada</li>
 				</ul>
 			</section>
 
-		<!-- Scripts -->
+	
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
