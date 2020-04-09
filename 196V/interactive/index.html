@@ -96,7 +96,7 @@
 
 				<section id="two">
 							  <h2>Visualization</h2>
-							  <h4><b>Does the GDP of a nation affect the CO2 output of a country?</b></h4>
+							  <h4><b>Does the GDP of a nation affect how the CO2 output of a country is distributed?</b></h4>
 							  <div id="my_dataviz"></div>
 				
 <!--START OF GRAPH CODE-->
@@ -153,13 +153,13 @@ d3.csv("https://raw.githubusercontent.com/JacobWurz/jacobwurz.github.io/master/1
 	svg.append("text")
       .attr("text-anchor", "end")
       .attr("x", 40)
-      .attr("y", height/2 - 35)
+      .attr("y", height/2 - 25)
 	  .attr("transform", "translate(-300,150) rotate(270)")
       .text("United States");
 	svg.append("text")
       .attr("text-anchor", "end")
       .attr("x", -160)
-      .attr("y", height/2 - 35)
+      .attr("y", height/2 - 25)
 	  .attr("transform", "translate(-300,150) rotate(270)")
       .text("Ecuador");
   // Add Y axis
@@ -168,7 +168,7 @@ d3.csv("https://raw.githubusercontent.com/JacobWurz/jacobwurz.github.io/master/1
     .range([ height, 0 ]);
   svg.append("g")
     .attr("transform", "translate(0,0)")
-    .call(d3.axisLeft(y).tickSize(-width).tickValues([-100,-80,-60,-40,-20,0,20,40,60,80,100]).tickFormat(d3.format(".0%")))
+    .call(d3.axisLeft(y).tickSize(-width).tickValues([-100,-80,-60,-40,-20,0,20,40,60,80,100]).tickFormat(d => d + "%"))
     .select(".domain").remove()
   // Customization
   svg.selectAll(".tick line").attr("stroke", "#b8b8b8")
@@ -176,7 +176,7 @@ d3.csv("https://raw.githubusercontent.com/JacobWurz/jacobwurz.github.io/master/1
   // color palette
   var color = d3.scaleOrdinal()
     .domain(keys)
-    .range(d3.schemeDark2);
+    .range(d3.schemePaired);
 
   //stack the data?
   var stackedData = d3.stack()
