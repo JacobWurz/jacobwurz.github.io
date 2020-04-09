@@ -104,7 +104,7 @@
 <script>
 
 // set the dimensions and margins of the graph
-var margin = {top: 20, right: 30, bottom: 0, left: 3},
+var margin = {top: 20, right: 30, bottom: 0, left: 80},
     width = 860 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
 
@@ -122,7 +122,7 @@ d3.csv("https://raw.githubusercontent.com/JacobWurz/jacobwurz.github.io/master/1
 
         console.log(data.columns);
   // List of groups = header of the csv files
-  var keys = data.columns.slice(8)  //.columns.slice(1).slice(1) takes out the "year" column
+  var keys = data.columns.slice(3)  //.columns.slice(1).slice(1) takes out the "year" column
   var usGDP = data.columns[1]
 		console.log(keys);
   // Add X axis
@@ -131,7 +131,8 @@ d3.csv("https://raw.githubusercontent.com/JacobWurz/jacobwurz.github.io/master/1
     .range([ 0, width ]);
   svg.append("g")
     .attr("transform", "translate(0," + height*0.8 + ")")
-    .call(d3.axisBottom(x).tickSize(-height*.7).tickValues([1970, 1980, 1990, 2000, 2010]))
+    .call(d3.axisBottom(x).tickSize(-height*.7).tickValues([1971,1975,1980,1985, 1990,1995, 2000, 2005,2010,2014])
+			.tickFormat(d3.format("0S")))
     .select(".domain").remove()
   // Customization
   svg.selectAll(".tick line").attr("stroke", "#b8b8b8")
@@ -139,15 +140,39 @@ d3.csv("https://raw.githubusercontent.com/JacobWurz/jacobwurz.github.io/master/1
   // Add X axis label:
   svg.append("text")
       .attr("text-anchor", "end")
-      .attr("x", width)
-      .attr("y", height-30 )
+      .attr("x", width/2)
+      .attr("y", height-60 )
       .text("Year");
-
+  // Add Y axis label:
+  svg.append("text")
+      .attr("text-anchor", "end")
+      .attr("x", -20)
+      .attr("y", height/2 -55)
+	  .attr("transform", "translate(-300,150) rotate(270)")
+      .text("Percentage(0-100%)");
+	svg.append("text")
+      .attr("text-anchor", "end")
+      .attr("x", 40)
+      .attr("y", height/2 - 35)
+	  .attr("transform", "translate(-300,150) rotate(270)")
+      .text("United States");
+	svg.append("text")
+      .attr("text-anchor", "end")
+      .attr("x", -160)
+      .attr("y", height/2 - 35)
+	  .attr("transform", "translate(-300,150) rotate(270)")
+      .text("Ecuador");
   // Add Y axis
   var y = d3.scaleLinear()
     .domain([-170, 130])
     .range([ height, 0 ]);
-	
+  svg.append("g")
+    .attr("transform", "translate(0,0)")
+    .call(d3.axisLeft(y).tickSize(-width).tickValues([-100,-80,-60,-40,-20,0,20,40,60,80,100]).tickFormat(d3.format(".0%")))
+    .select(".domain").remove()
+  // Customization
+  svg.selectAll(".tick line").attr("stroke", "#b8b8b8")
+  
   // color palette
   var color = d3.scaleOrdinal()
     .domain(keys)
