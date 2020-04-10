@@ -183,42 +183,8 @@ d3.csv("https://raw.githubusercontent.com/JacobWurz/jacobwurz.github.io/master/1
 	.order(d3.stackOrderNone)
     (data)	
 	
-	//add the line to seperate USA and Ecuador more easily
-	svg.append("line")
-        .attr("x1", 0)
-        .attr("y1", height/2-39)
-        .attr("x2", width)
-        .attr("y2", height/2-39)
-			.attr("stroke-width", 4)
-            .attr("stroke", "black");
-	svg.append("line")
-        .attr("x1", -60)
-        .attr("y1", height/2-39)
-        .attr("x2", -18)
-        .attr("y2", height/2-39)
-			.attr("stroke-width", 4)
-			.attr("opacity", 0.3)
-            .attr("stroke", "black");
-	//add the line for GDP		
-	svg.append("path")
-      .datum(data)
-      .attr("fill", "none")
-      .attr("stroke", "black")
-      .attr("stroke-width", 5)
-      .attr("d", d3.line()
-        .x(function(d) { return x(d.year) })
-        .y(function(d) { return y(d.UsGDP2) })
-        )
-	//add the line for GDP		
-	svg.append("path")
-      .datum(data)
-      .attr("fill", "none")
-      .attr("stroke", "black")
-      .attr("stroke-width", 5)
-      .attr("d", d3.line()
-        .x(function(d) { return x(d.year) })
-        .y(function(d) { return y(d.EcGDP2) })
-        )
+	
+	
   // create a tooltip
   var Tooltip = svg
     .append("text")
@@ -278,6 +244,45 @@ d3.csv("https://raw.githubusercontent.com/JacobWurz/jacobwurz.github.io/master/1
       .on("mousemove", mousemove)
       .on("mouseleave", mouseleave)
 	  .on("click", mouseclick)
+	  
+	  
+	  
+	//add the line to seperate USA and Ecuador more easily
+	svg.append("line")
+        .attr("x1", 0)
+        .attr("y1", height/2-39)
+        .attr("x2", width)
+        .attr("y2", height/2-39)
+			.attr("stroke-width", 4)
+            .attr("stroke", "black");
+	svg.append("line")
+        .attr("x1", -60)
+        .attr("y1", height/2-39)
+        .attr("x2", -18)
+        .attr("y2", height/2-39)
+			.attr("stroke-width", 4)
+			.attr("opacity", 0.3)
+            .attr("stroke", "black");
+	//add the line for UsGDP		
+	svg.append("path")
+      .datum(data)
+      .attr("fill", "none")
+      .attr("stroke", "black")
+      .attr("stroke-width", 5)
+      .attr("d", d3.line()
+        .x(function(d) { return x(d.year) })
+        .y(function(d) { return y(d.UsGDP2) })
+        )
+	//add the line for EcGDP		
+	svg.append("path")
+      .datum(data)
+      .attr("fill", "none")
+      .attr("stroke", "black")
+      .attr("stroke-width", 4.3)
+      .attr("d", d3.line()
+        .x(function(d) { return x(d.year) })
+        .y(function(d) { return y(d.EcGDP2) })
+        )
 })
 </script>
 <!--FINISH OF GRAPH CODE-->
