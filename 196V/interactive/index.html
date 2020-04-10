@@ -121,7 +121,7 @@ d3.csv("https://raw.githubusercontent.com/JacobWurz/jacobwurz.github.io/master/1
 
         console.log(data.columns);
   // List of groups = header of the csv files
-  var keys = data.columns.slice(4)  //.columns.slice(1).slice(1) takes out the "year" column
+  var keys = data.columns.slice(5)  //.columns.slice(1).slice(1) takes out the "year" column
 		console.log(keys);
   // Add X axis
   var x = d3.scaleLinear()
@@ -209,18 +209,34 @@ d3.csv("https://raw.githubusercontent.com/JacobWurz/jacobwurz.github.io/master/1
         .x(function(d) { return x(d.year) })
         .y(function(d) { return y(d.UsGDP2) })
         )
-
+	//add the line for GDP		
+	svg.append("path")
+      .datum(data)
+      .attr("fill", "none")
+      .attr("stroke", "black")
+      .attr("stroke-width", 1.5)
+      .attr("d", d3.line()
+        .x(function(d) { return x(d.year) })
+        .y(function(d) { return y(d.EcGDP2) })
+        )
   // create a tooltip
   var Tooltip = svg
     .append("text")
     .attr("x", 0)
     .attr("y", 0)
     .style("opacity", 0)
-    .style("font-size", 17)
+    .style("font-size", "17px")
+  var Tooltip2 = svg
+    .append("text")
+    .attr("x", 0)
+    .attr("y", 20)
+    .style("opacity", 0)
+    .style("font-size", "14px")
 
   // Three function that change the tooltip when user hover / move / leave a cell
   var mouseover = function(d) {
     Tooltip.style("opacity", 1)
+	Tooltip2.style("opacity", 1)
     d3.selectAll(".myArea").style("opacity", .2)
     d3.select(this)
       .style("stroke", "black")
@@ -229,9 +245,14 @@ d3.csv("https://raw.githubusercontent.com/JacobWurz/jacobwurz.github.io/master/1
   var mousemove = function(d,i) {
     grp = keys[i]
     Tooltip.text(grp)
+	if(i > 7)
+		Tooltip2.text("US GDP Between $5,609 and $55,032 per capita")
+	else
+		Tooltip2.text("Ecuador GDP Between $440 and $6,377 per capita")
   }
   var mouseleave = function(d) {
     Tooltip.style("opacity", 0)
+	Tooltip2.style("opacity", 0)
     d3.selectAll(".myArea").style("opacity", 1).style("stroke", "none")
    }
   var mouseclick = function(d){
