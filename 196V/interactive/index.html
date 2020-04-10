@@ -117,12 +117,11 @@ var svg = d3.select("#my_dataviz")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 // Parse the Data
-d3.csv("https://raw.githubusercontent.com/JacobWurz/jacobwurz.github.io/master/196V/196data3.csv", function(data) {
+d3.csv("https://raw.githubusercontent.com/JacobWurz/jacobwurz.github.io/master/196V/196data4.csv", function(data) {
 
         console.log(data.columns);
   // List of groups = header of the csv files
-  var keys = data.columns.slice(3)  //.columns.slice(1).slice(1) takes out the "year" column
-  var usGDP = data.columns[1]
+  var keys = data.columns.slice(4)  //.columns.slice(1).slice(1) takes out the "year" column
 		console.log(keys);
   // Add X axis
   var x = d3.scaleLinear()
@@ -204,11 +203,11 @@ d3.csv("https://raw.githubusercontent.com/JacobWurz/jacobwurz.github.io/master/1
 	svg.append("path")
       .datum(data)
       .attr("fill", "none")
-      .attr("stroke", "steelblue")
+      .attr("stroke", "black")
       .attr("stroke-width", 1.5)
       .attr("d", d3.line()
         .x(function(d) { return x(d.year) })
-        .y(function(d) { return y(d.year) })
+        .y(function(d) { return y(d.UsGDP2) })
         )
 
   // create a tooltip
@@ -294,19 +293,19 @@ to understand the relationship between values.
 </h5>
 
 <h5><strong>
-	Roughly how much time did you spend developing your application (in people-hours)? What aspects took the most time?
+	Roughly how much time did you spend developing your application (in people-hours)?
 		
 </strong>
 <h5>
-	We spent roughly 2-ish hours on finding different datasets, 3 hours on cleaning up the final dataset, and 10-ish hours on learning d3 and cleaning up the webpage.
-				So <b>15 hours</b> in total about.
+	We spent roughly 2-ish hours on finding different datasets, 3 hours on cleaning up the final dataset, and 15-ish hours on learning d3 and cleaning up the webpage.
+				So <b>20 hours</b> in total about.
 </h5>
 <h5><strong>
 	What aspects took the most time?
 		
 </strong>
 <h5>
-	Everything involving interactivity with D3 took the most time. Displaying a neat visual on D3 was easy. But displaying an interactive visual in the way we wanted it to be interactive was a challenge.
+	Everything involving interactivity with D3 took the most time. Displaying a neat visual on D3 was easy. But displaying an interactive visual in the way we wanted it to be interactive was a challenge. For example learning how to just add a line to the webpage took 30-ish minutes alone.
 </h5>
 
 </font>
