@@ -384,6 +384,142 @@ to understand the relationship between values.
 
 
 		</h5>
+	
+	<section id="five">
+	<h5>&nbsp;</h5><h5>&nbsp;</h5><h5>&nbsp;</h5><b>Section 2</b><h2></h2><h5>&nbsp;</h5>
+	<font size = "3">
+		<h5>
+		We decided to continue the theme of exploring how the GDP of the two countries affects various aspects of the countries.</h5><h5>
+		This led us to our next question, and our next visualization. We questioned whether the economy improving over the years in Ecuador changed the porportions of the ages of different population percentages.
+
+		</h5><h5>&nbsp;</h5>
+	<section id="six">
+  <h2>Visualization 2</h2>
+  <h4><b>Does the switch to the US dollar in 1999 affect the population porportions of Ecuador?</b></h4>
+  <!-- Add 3 buttons -->
+<button onclick="update(data1)">1971</button>
+<button onclick="update(data2)">1990</button>
+<button onclick="update(data3)">1995</button>
+<button onclick="update(data4)">1999</button>
+<button onclick="update(data5)">2014</button>
+
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz2"></div>
+
+<script>
+
+// set the dimensions and margins of the graph
+var width2 = 450
+    height2 = 450
+    margin2 = 40
+
+// The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+var radius = Math.min(width2, height2) / 2 - margin2
+
+// append the svg object to the div called 'my_dataviz'
+var svg2 = d3.select("#my_dataviz2")
+  .append("svg")
+    .attr("width", width2)
+    .attr("height", height2)
+  .append("g")
+    .attr("transform", "translate(" + width2 / 2 + "," + height2 / 2 + ")");
+
+// create 2 data_set
+var data1;
+var data2;
+var data3;
+d3.csv("https://raw.githubusercontent.com/JacobWurz/jacobwurz.github.io/master/196V/a4dataset.csv", function(data) {
+	//data1 = data.columns.slice(20)  //US DATA
+})
+d3.csv("https://raw.githubusercontent.com/JacobWurz/jacobwurz.github.io/master/196V/a4dataset2.csv", function(data) {
+	//data2 = data.columns.slice(5)  //EC DATA
+})
+data1 = {a: 4.127880169, b: 4.868576266, c:4.874381586, d:5.800862931, f: 5.769405146, g: 6.951224993, h: 6.893755382, i: 8.222003431, j: 8.131354153, k: 10.85886072, l:10.73507367, m: 12.54612429, n: 12.35775605,o: 14.70230413,p: 14.41963823}
+data2 = {a: 4.415530193, b: 5.924776013, c:5.990258738, d:7.026588811, f: 7.055102329, g: 8.303372763, h: 8.267550921, i: 9.713601383, j: 9.617972545, k: 10.89844771, l:10.76437335, m: 11.81142775, n: 11.60870384,o: 12.88775309,p: 12.55959535}
+data3 = {a: 5.44167565, b: 6.13527835, c:6.21142487, d:7.269800005, f: 7.294914522, g: 8.533263925, h: 8.507441162, i: 9.622123233, j: 9.54294765, k: 10.49220986, l:10.31902926, m: 11.46552328, n: 11.1694453,o: 12.40269602,p: 12.05493204}
+data4 = {a: 5.44167565, b: 6.297147519, c:6.374943369, d:7.439926536, f: 7.477843305, g: 8.499120767, h: 8.495233109, i: 9.36485808, j: 9.267584252, k: 10.31989552, l:10.07434604, m: 11.23210796, n: 10.91258098,o: 11.9488463,p: 11.58303981}
+data5 = {a: 6.199603779, b: 6.740101935, c:6.826424778, d:7.552891086, f: 7.526220692, g: 8.41020771, h: 8.281880767, i: 9.09379707, j: 8.854708112, k: 9.764125858, l:9.410248952, m: 9.89087138, n: 9.506448293,o: 9.913172681,p: 9.514896963}
+
+
+// set the color scale
+var color = d3.scaleOrdinal()
+  //.domain(["a", "b", "c", "d", "e", "f"])
+  .domain(data2)
+  .range(d3.schemeDark2);
+
+// A function that create / update the plot for a given variable:
+function update(data) {
+
+  // Compute the position of each group on the pie:
+  var pie = d3.pie()
+    .value(function(d) {return d.value; })
+    .sort(function(a, b) { console.log(a) ; return d3.ascending(a.key, b.key);} ) // This make sure that group order remains the same in the pie chart
+  var data_ready = pie(d3.entries(data))
+
+  // map to data
+  var u = svg2.selectAll("path")
+    .data(data_ready)
+	
+  var arcGenerator = d3.arc()
+	.innerRadius(0)
+	.outerRadius(radius)
+	
+  // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
+  u
+    .enter()
+    .append('path')
+    .merge(u)
+    .transition()
+    .duration(1000)
+    .attr('d', d3.arc()
+      .innerRadius(0)
+      .outerRadius(radius)
+    )
+    .attr('fill', function(d){ return(color(d.data.key)) })
+    .attr("stroke", "black")
+    .style("stroke-width", "2px")
+    .style("opacity", 1)
+  
+  u
+	.selectAll('mySlices')
+	  .data(data_ready)
+	  .enter()
+	  .append('text')
+	  .text(function(d){ return "grp " + d.data.key})
+	  .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")";  })
+	  .style("text-anchor", "middle")
+	  .style("font-size", 17)
+  // remove the group that is not present anymore
+  u
+    .exit()
+    .remove()
+	
+  svg2
+	.append("text")
+      .attr("text-anchor", "end")
+      .attr("x", -40)
+      .attr("y", -150)
+	  .attr("transform", "translate(0,0) rotate(0)")
+      .text("TEST");
+
+}
+
+// Initialize the plot with the first dataset
+update(data1)
+
+
+</script>
+
+<section id="six">
+	<h5>&nbsp;</h5><h5>&nbsp;</h5><h5>&nbsp;</h5><b>Section 2</b><h2></h2><h5>&nbsp;</h5>
+	<font size = "3">
+		<h5>
+		We decided to continue the theme of exploring how the GDP of the two countries affects various aspects of the countries.</h5><h5>
+		This led us to our next question, and our next visualization. We questioned whether the economy improving over the years in Ecuador changed the porportions of the ages of different population percentages.
+
+		</h5><h5>&nbsp;</h5>
+<img src="assets/image1.png" alt="image1.png" class="inline"/>
+
 
 </font>
            </div>
