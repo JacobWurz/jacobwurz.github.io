@@ -493,15 +493,560 @@ function update(data) {
   u
     .exit()
     .remove()
-	
-  svg2
-	.append("text")
-      .attr("text-anchor", "end")
-      .attr("x", -40)
-      .attr("y", -150)
-	  .attr("transform", "translate(0,0) rotate(0)")
-      .text("TEST");
-
+	var test2 = d3.min(function(d) { return data.a; }, function(d) { return data.a; });
+	console.log("test2: " + test2);
+	if(test2 < 4.2){
+		d3.select("#myId").remove()
+		d3.select("#myId2").remove()
+		d3.select("#myId3").remove()
+		d3.select("#myId4").remove()
+		d3.select("#myId5").remove()
+		d3.select("#myId6").remove()
+		d3.select("#myId7").remove()
+		d3.select("#myId8").remove()
+		d3.select("#myId9").remove()
+		d3.select("#myId10").remove()
+		d3.select("#myId11").remove()
+		d3.select("#myId12").remove()
+		d3.select("#myId13").remove()
+		d3.select("#myId14").remove()
+		d3.select("#myId15").remove()
+		
+		svg2
+		.append("text")
+		  .attr("id", "myId")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 15)
+		  .attr("transform", "translate(0,0) rotate(270)")
+		  .text("40-44,F");
+		svg2
+		.append("text")
+		  .attr("id", "myId2")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 3)
+		  .attr("transform", "translate(0,0) rotate(290)")
+		  .text("35-39,M");
+		svg2
+		.append("text")
+		  .attr("id", "myId3")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 10)
+		  .attr("transform", "translate(0,0) rotate(300)")
+		  .text("35-39,F"); 
+		svg2
+		.append("text")
+		  .attr("id", "myId4")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 15)
+		  .attr("transform", "translate(0,0) rotate(310)")
+		  .text("30-34,M"); 
+		svg2
+		.append("text")
+		  .attr("id", "myId5")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(320)")
+		  .text("30-34,F");
+		svg2
+		.append("text")
+		  .attr("id", "myId6")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(340)")
+		  .text("25-29,M");
+		svg2
+		.append("text")
+		  .attr("id", "myId7")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(0)")
+		  .text("25-29,F");
+		svg2
+		.append("text")
+		  .attr("id", "myId8")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(20)")
+		  .text("20-24,M");
+		svg2
+		.append("text")
+		  .attr("id", "myId9")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(40)")
+		  .text("20-24,F");
+		svg2
+		.append("text")
+		  .attr("id", "myId10")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(70)")
+		  .text("15-19,M");
+		svg2
+		.append("text")
+		  .attr("id", "myId11")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(100)")
+		  .text("15-19,F");	
+		svg2
+		.append("text")
+		  .attr("id", "myId12")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(130)")
+		  .text("10-14,M");	
+		svg2
+		.append("text")
+		  .attr("id", "myId13")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(160)")
+		  .text("10-14,F");
+		svg2
+		.append("text")
+		  .attr("id", "myId14")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(200)")
+		  .text("05-09,M");
+		svg2
+		.append("text")
+		  .attr("id", "myId15")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(240)")
+		  .text("05-09,F");	
+	}
+	else if(test2 < 4.5){
+		d3.select("#myId").remove()
+		d3.select("#myId2").remove()
+		d3.select("#myId3").remove()
+		d3.select("#myId4").remove()
+		d3.select("#myId5").remove()
+		d3.select("#myId6").remove()
+		d3.select("#myId7").remove()
+		d3.select("#myId8").remove()
+		d3.select("#myId9").remove()
+		d3.select("#myId10").remove()
+		d3.select("#myId11").remove()
+		d3.select("#myId12").remove()
+		d3.select("#myId13").remove()
+		d3.select("#myId14").remove()
+		d3.select("#myId15").remove()
+		
+		svg2
+		.append("text")
+		  .attr("id", "myId")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 15)
+		  .attr("transform", "translate(0,0) rotate(270)")
+		  .text("40-44,F");
+		svg2
+		.append("text")
+		  .attr("id", "myId2")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 3)
+		  .attr("transform", "translate(0,0) rotate(290)")
+		  .text("35-39,M");
+		svg2
+		.append("text")
+		  .attr("id", "myId3")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 10)
+		  .attr("transform", "translate(0,0) rotate(300)")
+		  .text("35-39,F"); 
+		svg2
+		.append("text")
+		  .attr("id", "myId4")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 15)
+		  .attr("transform", "translate(0,0) rotate(310)")
+		  .text("30-34,M"); 
+		svg2
+		.append("text")
+		  .attr("id", "myId5")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(330)")
+		  .text("30-34,F");
+		svg2
+		.append("text")
+		  .attr("id", "myId6")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(350)")
+		  .text("25-29,M");
+		svg2
+		.append("text")
+		  .attr("id", "myId7")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(10)")
+		  .text("25-29,F");
+		svg2
+		.append("text")
+		  .attr("id", "myId8")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(30)")
+		  .text("20-24,M");
+		svg2
+		.append("text")
+		  .attr("id", "myId9")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(60)")
+		  .text("20-24,F");
+		svg2
+		.append("text")
+		  .attr("id", "myId10")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(90)")
+		  .text("15-19,M");
+		svg2
+		.append("text")
+		  .attr("id", "myId11")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(110)")
+		  .text("15-19,F");	
+		svg2
+		.append("text")
+		  .attr("id", "myId12")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(140)")
+		  .text("10-14,M");	
+		svg2
+		.append("text")
+		  .attr("id", "myId13")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(170)")
+		  .text("10-14,F");
+		svg2
+		.append("text")
+		  .attr("id", "myId14")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(210)")
+		  .text("05-09,M");
+		svg2
+		.append("text")
+		  .attr("id", "myId15")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(250)")
+		  .text("05-09,F");	
+	}
+	else if(test2 < 5.5){
+		d3.select("#myId").remove()
+		d3.select("#myId2").remove()
+		d3.select("#myId3").remove()
+		d3.select("#myId4").remove()
+		d3.select("#myId5").remove()
+		d3.select("#myId6").remove()
+		d3.select("#myId7").remove()
+		d3.select("#myId8").remove()
+		d3.select("#myId9").remove()
+		d3.select("#myId10").remove()
+		d3.select("#myId11").remove()
+		d3.select("#myId12").remove()
+		d3.select("#myId13").remove()
+		d3.select("#myId14").remove()
+		d3.select("#myId15").remove()
+		
+		svg2
+		.append("text")
+		  .attr("id", "myId")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 15)
+		  .attr("transform", "translate(0,0) rotate(270)")
+		  .text("40-44,F");
+		svg2
+		.append("text")
+		  .attr("id", "myId2")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 3)
+		  .attr("transform", "translate(0,0) rotate(295)")
+		  .text("35-39,M");
+		svg2
+		.append("text")
+		  .attr("id", "myId3")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 10)
+		  .attr("transform", "translate(0,0) rotate(305)")
+		  .text("35-39,F"); 
+		svg2
+		.append("text")
+		  .attr("id", "myId4")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 15)
+		  .attr("transform", "translate(0,0) rotate(320)")
+		  .text("30-34,M"); 
+		svg2
+		.append("text")
+		  .attr("id", "myId5")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(335)")
+		  .text("30-34,F");
+		svg2
+		.append("text")
+		  .attr("id", "myId6")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(355)")
+		  .text("25-29,M");
+		svg2
+		.append("text")
+		  .attr("id", "myId7")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(20)")
+		  .text("25-29,F");
+		svg2
+		.append("text")
+		  .attr("id", "myId8")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(40)")
+		  .text("20-24,M");
+		svg2
+		.append("text")
+		  .attr("id", "myId9")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(65)")
+		  .text("20-24,F");
+		svg2
+		.append("text")
+		  .attr("id", "myId10")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(90)")
+		  .text("15-19,M");
+		svg2
+		.append("text")
+		  .attr("id", "myId11")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(120)")
+		  .text("15-19,F");	
+		svg2
+		.append("text")
+		  .attr("id", "myId12")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(150)")
+		  .text("10-14,M");	
+		svg2
+		.append("text")
+		  .attr("id", "myId13")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(180)")
+		  .text("10-14,F");
+		svg2
+		.append("text")
+		  .attr("id", "myId14")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(210)")
+		  .text("05-09,M");
+		svg2
+		.append("text")
+		  .attr("id", "myId15")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(250)")
+		  .text("05-09,F");	
+	}
+	else if(test2 < 6.2){
+		d3.select("#myId").remove()
+		d3.select("#myId2").remove()
+		d3.select("#myId3").remove()
+		d3.select("#myId4").remove()
+		d3.select("#myId5").remove()
+		d3.select("#myId6").remove()
+		d3.select("#myId7").remove()
+		d3.select("#myId8").remove()
+		d3.select("#myId9").remove()
+		d3.select("#myId10").remove()
+		d3.select("#myId11").remove()
+		d3.select("#myId12").remove()
+		d3.select("#myId13").remove()
+		d3.select("#myId14").remove()
+		d3.select("#myId15").remove()
+		
+		svg2
+		.append("text")
+		  .attr("id", "myId")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 15)
+		  .attr("transform", "translate(0,0) rotate(270)")
+		  .text("40-44,F");
+		svg2
+		.append("text")
+		  .attr("id", "myId2")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 3)
+		  .attr("transform", "translate(0,0) rotate(295)")
+		  .text("35-39,M");
+		svg2
+		.append("text")
+		  .attr("id", "myId3")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 10)
+		  .attr("transform", "translate(0,0) rotate(310)")
+		  .text("35-39,F"); 
+		svg2
+		.append("text")
+		  .attr("id", "myId4")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 15)
+		  .attr("transform", "translate(0,0) rotate(330)")
+		  .text("30-34,M"); 
+		svg2
+		.append("text")
+		  .attr("id", "myId5")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(345)")
+		  .text("30-34,F");
+		svg2
+		.append("text")
+		  .attr("id", "myId6")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(5)")
+		  .text("25-29,M");
+		svg2
+		.append("text")
+		  .attr("id", "myId7")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(30)")
+		  .text("25-29,F");
+		svg2
+		.append("text")
+		  .attr("id", "myId8")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(58)")
+		  .text("20-24,M");
+		svg2
+		.append("text")
+		  .attr("id", "myId9")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(80)")
+		  .text("20-24,F");
+		svg2
+		.append("text")
+		  .attr("id", "myId10")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(105)")
+		  .text("15-19,M");
+		svg2
+		.append("text")
+		  .attr("id", "myId11")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(135)")
+		  .text("15-19,F");	
+		svg2
+		.append("text")
+		  .attr("id", "myId12")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(160)")
+		  .text("10-14,M");	
+		svg2
+		.append("text")
+		  .attr("id", "myId13")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(190)")
+		  .text("10-14,F");
+		svg2
+		.append("text")
+		  .attr("id", "myId14")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(220)")
+		  .text("05-09,M");
+		svg2
+		.append("text")
+		  .attr("id", "myId15")
+		  .attr("text-anchor", "end")
+		  .attr("x", 130)
+		  .attr("y", 22)
+		  .attr("transform", "translate(0,0) rotate(250)")
+		  .text("05-09,F");	
+	}
 }
 
 // Initialize the plot with the first dataset
